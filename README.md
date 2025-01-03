@@ -1,7 +1,27 @@
 # Exoskeleton-AI
 Main repo for Exoskeleton-AI. The goal is to train a real-time gait prediction model for use in the feedback loop
 
+## Prerequisite Setup
+For the following commands to work we assume you have these downloaded on your system:
+- python3
+- make (mac or linux only)
+
+### Linux
+```
+sudo apt update
+sudo apt install python3 make
+```
+### MacOS
+```
+brew install make
+brew install python3
+```
+### Windows
+https://www.python.org/downloads/windows/
+
 ## Setup
+
+### Linux / MacOS
 To setup the virtual environment, run this command from the home folder of the repo:
 ```
 make setup
@@ -11,7 +31,8 @@ this won't activate the venv in your terminal, but (hopefully) your IDE can find
 source venv/bin/activate
 ```
 
-Also not that this likely won't work on windows systems (personally I hate developing on window and would recommend looking into Windows Subsystem for Linux but up to personal choice at the end of the day). Seperate windows instructions below
+### Windows
+Personally I hate developing on windows and would recommend looking into Windows Subsystem for Linux (https://learn.microsoft.com/en-us/windows/wsl/install)
 ```
 python3 -m venv
 venv\Scripts\activate
@@ -20,11 +41,16 @@ pip install -r requirements.txt
 
 ## Adding Dependencies
 See above on how to activate the virtual environment in your terminal, you can then run:
+### Linux / MacOS
 ```
 pip install <dependency>
 make add-deps
 ```
-The first line will install the dependency locally, and the second line updates requirements.txt with the new dependency
+### Windows
+```
+pip install <dependency>
+pip freeze > requirements.txt
+```
 
 ## Contributing Guidelines
 See [here](docs/contributing.md) for extensive guidelines on how to develop, and things like commit syntax
